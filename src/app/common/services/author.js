@@ -1,14 +1,12 @@
 'use strict';
 
 import angular from 'angular';
-import _ from 'lodash';
 
 const authorService = 'service.author';
 
 /** @ngInject */
 angular.module(authorService, [])
     .service('Author', function ($http) {
-
         /**
          * Init Author
          *
@@ -29,7 +27,6 @@ angular.module(authorService, [])
             this.fetchNumItems_();
         }
 
-
         /**
          * Get item in the index
          *
@@ -37,8 +34,8 @@ angular.module(authorService, [])
          * @returns {*}
          */
         Author.prototype.getItemAtIndex = function getItemAtIndex(index) {
-            var pageNumber = Math.floor(index / this.PAGE_SIZE);
-            var page = this.loadedPages[pageNumber];
+            const pageNumber = Math.floor(index / this.PAGE_SIZE);
+            const page = this.loadedPages[pageNumber];
 
             if (page) {
                 return page[index % this.PAGE_SIZE];
@@ -46,7 +43,6 @@ angular.module(authorService, [])
                 this.fetchPage_(pageNumber);
             }
         };
-
 
         /**
          * Get length
@@ -56,7 +52,6 @@ angular.module(authorService, [])
         Author.prototype.getLength = function getLength() {
             return this.numItems;
         };
-
 
         /**
          * Fecth page
@@ -75,7 +70,6 @@ angular.module(authorService, [])
                 }));
         };
 
-
         /**
          * Fetch number of items
          *
@@ -93,5 +87,3 @@ angular.module(authorService, [])
     });
 
 export default authorService;
-
-

@@ -2,7 +2,7 @@ export default mainController;
 
 /** @ngInject */
 function mainController(Author, Book) {
-    var vm = this;
+    const vm = this;
 
     vm.authors = Author;
     vm.books = Book;

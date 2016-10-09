@@ -11,6 +11,6 @@ function headerController($mdSidenav) {
     function toogleSidenav(navID) {
         return function () {
             $mdSidenav(navID).toggle();
-        }
+        };
     }
 }

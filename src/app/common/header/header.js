@@ -16,5 +16,3 @@ angular.module(headerModule, [])
     });
 
 export default headerModule;
-
-

@@ -3,7 +3,7 @@
 
 
 ## How to generate 1 million random items?
-I develop a module to generate this task. I support Open-source so I uploaded to NPM system to allow users to download, you can find here:
+I develop a module to generate a bunch of elements. I am supporting Open-source so I uploaded to NPM, to allow the rest of the users to download. Find it here:
 
 ```shell
 npm install -g faking
@@ -14,7 +14,7 @@ npm install -g faking
 ### Install
 Download or clone the repository:
 
-    git clone https://github.com/marsanla/ilovelists
+    git clone https://github.com/marsanla/cacaca
 
 Install global:
 
@@ -22,7 +22,7 @@ Install global:
 
 Install libraries:
 
-    cd ilovelists
+    cd cacaca
     npm install
 
 
@@ -30,8 +30,16 @@ Launch the dev server
 
     gulp serve
 
+Launch API
+
+    gulp api
+
+Generate fake data
+
+    npm install -g faking
+    gulp fake
+
 
 ### Notes
 
-* I didn't use server side, because the task wanted to focus on front-end development.
-* To manage a huge list of elements in an infinite scroll, i used virtual repeater.
+* To manage a huge list of elements in an infinite scroll, i used a virtual repeater for angularjs.
