@@ -1,0 +1,27 @@
+<md-sidenav
+    class="md-sidenav-left"
+    md-component-id="left"
+    md-is-locked-open="$mdMedia('gt-md')"
+    md-whiteframe="2">
+
+    <md-toolbar class="md-theme-indigo">
+        <h1 class="md-toolbar-tools">Authors</h1>
+    </md-toolbar>
+    <md-content layout-padding>
+
+        <md-virtual-repeat-container class="full-container">
+            <md-list-item md-virtual-repeat="item in vm.authors"
+                          ng-click="null"
+                          md-item-size="48"
+                          md-on-demand
+                          class="repeated-item"
+                          flex>
+                <p>{{ ::item.name }}</p>
+                <md-checkbox class="md-secondary"
+                             ng-model="item.selected"></md-checkbox>
+            </md-list-item>
+        </md-virtual-repeat-container>
+
+    </md-content>
+
+</md-sidenav>

@@ -1,0 +1,81 @@
+.p-h-xs {
+    padding-left: $spacing;
+    padding-right: $spacing;
+}
+
+.p-h-sm {
+    padding-left: $spacing * 2;
+    padding-right: $spacing * 2;
+}
+
+.p-h-md {
+    padding-left: $spacing * 3;
+    padding-right: $spacing * 3;
+}
+
+.p-h-lg {
+    padding-left: $spacing * 4;
+    padding-right: $spacing * 4;
+}
+
+.p-v-xs {
+    padding-top: $spacing;
+    padding-bottom: $spacing;
+}
+
+.p-v-sm {
+    padding-top: $spacing * 2;
+    padding-bottom: $spacing * 2;
+}
+
+.p-v-md {
+    padding-top: $spacing * 3;
+    padding-bottom: $spacing * 3;
+}
+
+.p-v-lg {
+    padding-top: $spacing * 4;
+    padding-bottom: $spacing * 4;
+}
+
+//---------------------
+
+.m-h-xs {
+    margin-left: $spacing;
+    margin-right: $spacing;
+}
+
+.m-h-sm {
+    margin-left: $spacing * 2;
+    margin-right: $spacing * 2;
+}
+
+.m-h-md {
+    margin-left: $spacing * 3;
+    margin-right: $spacing * 3;
+}
+
+.m-h-lg {
+    margin-left: $spacing * 4;
+    margin-right: $spacing * 4;
+}
+
+.m-v-xs {
+    margin-top: $spacing;
+    margin-bottom: $spacing;
+}
+
+.m-v-sm {
+    margin-top: $spacing * 2;
+    margin-bottom: $spacing * 2;
+}
+
+.m-v-md {
+    margin-top: $spacing * 3;
+    margin-bottom: $spacing * 3;
+}
+
+.m-v-lg {
+    margin-top: $spacing * 4;
+    margin-bottom: $spacing * 4;
+}

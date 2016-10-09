@@ -1,0 +1,19 @@
+.text-xs {
+    font-size: $font-size - 3;
+}
+
+.text-sm {
+    font-size: $font-size;
+}
+
+.text-md {
+    font-size: $font-size + 3;
+}
+
+.text-lg {
+    font-size: $font-size + 6;
+}
+
+.text-muted {
+    opacity: 0.8;
+}

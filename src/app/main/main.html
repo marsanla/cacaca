@@ -1,0 +1,35 @@
+<casumo-header></casumo-header>
+
+<div layout="column" ng-cloak>
+
+    <section layout="row" flex>
+
+        <author-sidenav authors="vm.authors"></author-sidenav>
+
+        <md-content flex layout-padding>
+
+            <md-virtual-repeat-container class="full-container"
+                                         md-auto-shrink="true">
+                <md-list-item md-virtual-repeat="item in vm.books"
+                              ng-click="null"
+                              md-item-size="88"
+                              md-on-demand
+                              class="repeated-item md-3-line"
+                              flex>
+                    <div class="md-list-item-text" layout="column">
+                        <h3>{{ item.name }}</h3>
+                        <h4 class="text-muted">{{ item.genre | uppercase }}</h4>
+                    </div>
+
+                    <span class="text-muted"
+                          am-time-ago="item.publis_date | amFromUnix"></span>
+                </md-list-item>
+            </md-virtual-repeat-container>
+
+        </md-content>
+
+    </section>
+
+</div>
+
+<casumo-footer></casumo-footer>
