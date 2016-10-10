@@ -94,6 +94,12 @@ angular.module(bookService, [])
 
             if (!_.isEmpty(this.filters)) {
                 _.forEach(this.filters, function (value, key) {
+                    const keys = key.split('.');
+
+                    if(keys.length > 1) {
+                        key = keys.join('][');
+                    }
+
                     filters += '&filter[' + key + ']=' + value;
                 });
             }
