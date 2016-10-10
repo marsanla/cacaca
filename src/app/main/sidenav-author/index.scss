@@ -1,5 +1,19 @@
 .md-sidenav-left {
+    height: 90vh;
+
+    md-content,
     .full-container {
-        min-height: 71.5vh;
+        height: 100%;
+    }
+}
+
+@media (max-width: 1278px) {
+    .md-sidenav-left {
+        height: 100vh;
+
+        md-content,
+        .full-container {
+            height: 88.5vh;
+        }
     }
 }

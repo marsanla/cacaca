@@ -8,6 +8,37 @@
 
         <md-content flex layout-padding>
 
+            <md-fab-speed-dial md-direction="left"
+                               md-open="options[$index].isOpen"
+                               class="md-scale md-fab-top-right md-hover-full"
+                               ng-mouseenter="options[$index].isOpen=true"
+                               ng-mouseleave="options[$index].isOpen=false">
+                <md-fab-trigger>
+                    <md-button aria-label="menu"
+                               class="md-fab md-warn">
+                        <md-tooltip md-direction="top">Menu</md-tooltip>
+                        <i class="mdi mdi-menu mdi-light"
+                                 aria-label="menu"></i>
+                    </md-button>
+                </md-fab-trigger>
+
+                <md-fab-actions>
+                    <div ng-repeat="item in vm.options">
+                        <md-button aria-label="{{::item.name}}"
+                                   class="md-fab md-raised"
+                                   ng-click="item.fn($event)">
+                            <md-tooltip md-direction="top"
+                                        md-visible="tooltipVisible"
+                                        md-autohide="false">
+                                {{::item.name}}
+                            </md-tooltip>
+
+                            <i class="mdi mdi-{{::item.icon}}" aria-label="{{::item.name}}"></i>
+                        </md-button>
+                    </div>
+                </md-fab-actions>
+            </md-fab-speed-dial>
+
             <md-virtual-repeat-container class="full-container"
                                          md-auto-shrink="true">
                 <md-list-item md-virtual-repeat="item in vm.books"
@@ -18,11 +49,11 @@
                               flex>
                     <div class="md-list-item-text" layout="column">
                         <h3>{{ item.name }}</h3>
-                        <h4 class="text-muted">{{ item.genre | uppercase }}</h4>
+                        <h4 class="text-muted">{{ item.genre | uppercase }} | by {{ item.author.name }}{{ (vm.inHalloween(item)) ? ' | In Halloween' : ''  }}{{ (vm.lastFridayOfMonth(item)) ? ' | Last friday of the month' : ''  }}</h4>
                     </div>
 
                     <span class="text-muted"
-                          am-time-ago="item.publis_date | amFromUnix"></span>
+                          am-time-ago="item.publish_date"></span>
                 </md-list-item>
             </md-virtual-repeat-container>
 

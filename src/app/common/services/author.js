@@ -14,14 +14,24 @@ angular.module(authorService, [])
          */
         function Author() {
             /**
-             * @type {!Object<?Array>} Data pages, keyed by page number (0-index).
+             * Items loaded
+             *
+             * @type {{}}
              */
             this.loadedPages = {};
 
-            /** @type {number} Total number of items. */
+            /**
+             * Total number of items
+             *
+             * @type {number}
+             */
             this.numItems = 0;
 
-            /** @const {number} Number of items to fetch per request. */
+            /**
+             * Number of items to fetch per request
+             *
+             * @type {number}
+             */
             this.PAGE_SIZE = 10;
 
             this.fetchNumItems_();
