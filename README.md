@@ -25,6 +25,9 @@ Install libraries:
     cd cacaca
     npm install
 
+    cd server
+    npm install
+
 
 Launch the dev server
 
