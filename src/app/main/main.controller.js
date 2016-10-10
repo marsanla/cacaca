@@ -13,7 +13,7 @@ function mainController(Author, Book) {
     vm.options = [{
         name: 'Sort by Book',
         icon: 'sort-alphabetical',
-        fn: function ($event) {
+        fn: () => {
             vm.books = new Book({
                 order: 'name%20ASC'
             });
@@ -21,7 +21,7 @@ function mainController(Author, Book) {
     }, {
         name: 'Sort by Author',
         icon: 'sort-alphabetical',
-        fn: function ($event) {
+        fn: () => {
             vm.books = new Book({
                 order: 'authorId%20ASC'
             });
@@ -29,7 +29,7 @@ function mainController(Author, Book) {
     }, {
         name: 'Reset',
         icon: 'refresh',
-        fn: function ($event) {
+        fn: () => {
             vm.books = new Book();
         }
     }];
@@ -43,7 +43,7 @@ function mainController(Author, Book) {
      * @returns {boolean}
      */
     function inHalloween(book) {
-        if(!book) {
+        if (!book) {
             return false;
         }
 
@@ -65,7 +65,7 @@ function mainController(Author, Book) {
      * @returns {boolean}
      */
     function lastFridayOfMonth(book) {
-        if(!book) {
+        if (!book) {
             return false;
         }
 
@@ -83,18 +83,13 @@ function mainController(Author, Book) {
      * @returns {boolean}
      * @private
      */
-    function checkLastFriday_(publish_date) {
-        const date = new Date(publish_date);
-        let fridayCount = 0;
-        let isLast = false;
+    function checkLastFriday_(publishDate) {
+        const date = new Date(publishDate);
 
-        while (fridayCount < 4) {
-            if (date.getDay() === 5) {
-                isLast = true;
-                break;
-            }
+        if (date.getDay() === 5 && date.getDate() >= 23) {
+            return true;
         }
 
-        return isLast;
+        return false;
     }
 }

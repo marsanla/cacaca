@@ -5,7 +5,7 @@ module.exports = function (config) {
         basePath: '../',
         singleRun: true,
         autoWatch: false,
-        logLevel: 'INFO',
+        logLevel: 'ERROR',
         junitReporter: {
             outputDir: 'test-reports'
         },

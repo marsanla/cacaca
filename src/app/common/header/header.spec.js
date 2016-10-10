@@ -1,12 +1,13 @@
 import angular from 'angular';
 import 'angular-mocks';
-import {header} from './header';
+import headerM from './header';
 
 describe('header component', () => {
     beforeEach(() => {
-        angular
-            .module('common.header', ['app/common/header/header.html'])
-            .component('casumoHeader', header);
-        angular.mock.module('casumoHeader');
+        angular.mock.module(headerM);
     });
+
+    it('should pass a test', angular.mock.inject(() => {
+        expect(1).toEqual(1);
+    }));
 });
